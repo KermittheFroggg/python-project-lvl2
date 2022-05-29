@@ -1,14 +1,13 @@
 #!/usr/bin/env python
 
-import argparse
-
 from gendiff.generate_diff import generate_diff
 from gendiff.parsing import parsing
 
 
 def main():
     args = parsing()
-    print(generate_diff(args.__dict__['first_file'], args.__dict__['second_file']))
+    print(generate_diff(
+        args.__dict__['first_file'], args.__dict__['second_file']))
 
 
 if __name__ == '__main__':
