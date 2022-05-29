@@ -1,4 +1,6 @@
 import json
+import os
+import yaml
 
 
 def boolTolower(file):
@@ -12,9 +14,18 @@ def boolTolower(file):
 
 
 def generate_diff(file_path1, file_path2):
-    file1 = boolTolower(json.load(open(file_path1)))
-    file2 = boolTolower(json.load(open(file_path2)))
-    print(file1)
+    if os.path.splitext(file_path1)[1] == '.json':
+        file1 = boolTolower(json.load(open(file_path1)))
+    elif (os.path.splitext(file_path1)[1] == '.yml') or \
+        (os.path.splitext(file_path1)[1] == '.yaml'):
+        file1 = open(file_path1)
+        file1 = boolTolower(yaml.load(file1, Loader=yaml.FullLoader))
+    if os.path.splitext(file_path1)[1] == '.json':
+        file2 = boolTolower(json.load(open(file_path2)))
+    elif (os.path.splitext(file_path1)[1] == '.yml') or \
+        (os.path.splitext(file_path1)[1] == '.yaml'):
+        file2 = open(file_path2)
+        file2 = boolTolower(yaml.load(file2, Loader=yaml.FullLoader))
     source = ''
     for elem in (set(file1) - set(file2)):
         source += f'\n  - {elem}: {file1[elem]}'
