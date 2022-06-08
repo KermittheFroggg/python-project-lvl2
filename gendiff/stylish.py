@@ -12,7 +12,7 @@ def stylish_help(elem, depth_new):
     elif elem[3] == 'rm':
         res_str += f'{ident_new}- {elem[0]}: ' + (
                    stringify(elem[2], gref=(depth_new + 1) * 2) + '\n')
-    elif elem[2] == 'rm':
+    elif elem[2] == 'add':
         res_str += f'{ident_new}+ {elem[0]}: ' + (
                    stringify(elem[3], gref=(depth_new + 1) * 2) + '\n')
     else:
