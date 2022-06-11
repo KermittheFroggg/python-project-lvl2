@@ -28,12 +28,14 @@ def stylish(diff):
     res_str = ''
     depth_new = 0
     depth_old = 0
-    for elem in diff:
+    for index, elem in enumerate(diff):
         depth_new = elem[1].count('.')
         if depth_new < depth_old:
             for i in range(-depth_old, -depth_new):
                 res_str += ident * ((-i) * 4) + '}' + '\n'
         res_str += stylish_help(elem, depth_new)
+        if index == (len(diff) - 1) and depth_new > 0:
+            res_str += ident * depth_new * 4 + '}' + '\n'
         depth_old = depth_new
     return '{\n' + res_str + '}'
 
