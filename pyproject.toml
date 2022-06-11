@@ -13,7 +13,7 @@ gendiff = "gendiff.scripts.gendiff:main"
 [tool.poetry.dependencies]
 python = "^3.8"
 prompt = "^0.4.1"
-flake8 = "^4.0.1"
+flake8 = ">=3.8.3"
 pytest = ">=6.0.2"
 pytest-cov = "^3.0.0"
 PyYAML = "^6.0"
