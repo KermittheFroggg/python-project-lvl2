@@ -3,6 +3,7 @@ import os
 import yaml
 from gendiff.stylish import stylish
 from gendiff.plain import plain
+from gendiff.json import json_
 
 
 def boolTolower(file):
@@ -61,4 +62,6 @@ def generate_diff(file_path1, file_path2, format='stylish'):
         result = stylish(diff)
     elif format == 'plain':
         result = plain(diff)
+    elif format == 'json':
+        result = json.dumps(json_(diff), indent=4)
     return result
