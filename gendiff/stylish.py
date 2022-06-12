@@ -24,7 +24,7 @@ def stylish_help(elem, depth_new):
 
 
 def stylish(diff):
-    ident = ''
+    ident = ' '
     res_str = ''
     depth_new = 0
     depth_old = 0
@@ -35,8 +35,9 @@ def stylish(diff):
                 res_str += ident * ((-i) * 4) + '}' + '\n'
         res_str += stylish_help(elem, depth_new)
         if index == (len(diff) - 1) and depth_new > 0:
-            res_str += ident * depth_new * 4 + '}'
+            res_str += ident * depth_new * 4 + '}' + '\n'
         depth_old = depth_new
+    print(res_str)
     return '{\n' + res_str + '}'
 
 
