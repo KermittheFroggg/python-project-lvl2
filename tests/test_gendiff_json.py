@@ -1,5 +1,6 @@
 from gendiff.generate_diff import generate_diff
 
+
 def test_gendiff():
     result_func = generate_diff('tests/fixtures/file_path1.json', 'tests/fixtures/file_path2.json').split('\n')
     result_text = open('tests/fixtures/result_json.txt', 'r')
