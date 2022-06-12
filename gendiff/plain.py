@@ -23,6 +23,6 @@ def modernize(elem):
         if elem not in ('true', 'false', 'null'):
             return f"'{elem}'"
         elif isinstance(elem, int):
-            return int(elem)
+            return elem.strip("'")
         else:
             return elem
