@@ -58,7 +58,7 @@ def generate_diff(file_path1, file_path2, format='stylish'):
     diff = find_diff(file1, file2)
     diff = sorted(diff, key=lambda x: x[1])
     result = ''
-    if format == 'stylish':
+    if format == 'stylish' or format is None:
         result = stylish(diff)
     elif format == 'plain':
         result = plain(diff)

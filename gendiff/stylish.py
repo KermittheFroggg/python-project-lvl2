@@ -37,7 +37,6 @@ def stylish(diff):
         if index == (len(diff) - 1) and depth_new > 0:
             res_str += ident * depth_new * 4 + '}' + '\n'
         depth_old = depth_new
-    print(res_str)
     return '{\n' + res_str + '}'
 
 
