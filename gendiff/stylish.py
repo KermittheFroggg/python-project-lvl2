@@ -17,7 +17,7 @@ def stylish_help(elem, depth_new):
                    stringify(elem[3], gref=(depth_new + 1) * 2) + '\n')
     else:
         res_str += f'{ident_new}- {elem[0]}: ' + (
-                   stringify(elem[2], gref=(depth_new + 1) * 2)) + '\n'
+                   stringify(elem[2], gref=(depth_new + 1) * 2) + '\n')
         res_str += f'{ident_new}+ {elem[0]}: ' + (
                    stringify(elem[3], gref=(depth_new + 1) * 2) + '\n')
     return res_str
